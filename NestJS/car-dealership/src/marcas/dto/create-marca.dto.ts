@@ -1,7 +1,6 @@
-import { IsString, MinLength } from "class-validator";
+import { IsString } from "class-validator";
 
 export class CreateMarcaDto {
     @IsString()
-    @MinLength(1)
-    name: string;
+    nombre: string;
 }

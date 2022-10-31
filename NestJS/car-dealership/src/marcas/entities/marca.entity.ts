@@ -1,6 +1,6 @@
 export class Marca {
     id:string;
-    name:string;
+    nombre:string;
 
     createdAt:number;
     updatedAt?:number;

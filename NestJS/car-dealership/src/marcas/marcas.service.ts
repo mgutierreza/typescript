@@ -8,24 +8,13 @@ import { Marca } from './entities/marca.entity';
 @Injectable()
 export class MarcasService {
 
-  private marcas : Marca[] = [
-    {
-      id:uuid(),
-      name:'Toyota',
-      createdAt: new Date().getTime()
-    },
-    {
-      id:uuid(),
-      name:'MItsubishi',
-      createdAt: new Date().getTime()
-    }
-  ]
+  private marcas : Marca[];
 
   create(createMarcaDto: CreateMarcaDto) {
-    const {name} = createMarcaDto;
+    const {nombre} = createMarcaDto;
     const marca: Marca = {
       id: uuid(),
-      name: name.toLocaleLowerCase(),
+      nombre: nombre.toLocaleLowerCase(),
       createdAt: new Date().getTime(),
     }
 
@@ -62,4 +51,9 @@ export class MarcasService {
   remove(id: string) {
     this.marcas = this.marcas.filter(marca => marca.id !== id);
   }
+
+  fillMarcaWithSeedData(marcas: Marca[]){
+    this.marcas = marcas;
+  }
+
 }

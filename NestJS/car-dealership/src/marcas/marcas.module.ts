@@ -4,6 +4,7 @@ import { MarcasController } from './marcas.controller';
 
 @Module({
   controllers: [MarcasController],
-  providers: [MarcasService]
+  providers: [MarcasService],
+  exports: [MarcasService],
 })
 export class MarcasModule {}
